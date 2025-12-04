@@ -12,6 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        'api/alexa/webhook', // Alexa Skills webhook endpoint
     ];
 }

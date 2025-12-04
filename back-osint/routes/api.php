@@ -38,3 +38,6 @@ Route::middleware(['web'])->group(function () {
     Route::delete('/admin/usuarios/{id}', [AdminDashboardController::class, 'deleteUsuario']);
     Route::delete('/admin/casos/{id}', [AdminDashboardController::class, 'deleteCaso']);
 });
+// Alexa Skills webhook endpoint
+// No Laravel auth middleware - Alexa handles authentication via OAuth access tokens
+Route::post('/alexa/webhook', [App\Http\Controllers\AlexaController::class, 'handleRequest']);
