@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,6 +13,7 @@
   <link rel="stylesheet" href="{{ asset('assets/dashboard/sidebars/sidebars.css') }}" />
   <link rel="stylesheet" href="{{ asset('assets/dashboard/main-content/main-content.css') }}" />
 </head>
+
 <body>
   <!-- NAVBAR -->
   <header class="navbar">
@@ -25,14 +27,11 @@
         <div class="navbar-search">
           <span class="navbar-search-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
-              <path d="M10 2a8 8 0 1 1-5.3 14l-3.1 3.1-1.4-1.4 3.1-3.1A8 8 0 0 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z" />
+              <path
+                d="M10 2a8 8 0 1 1-5.3 14l-3.1 3.1-1.4-1.4 3.1-3.1A8 8 0 0 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z" />
             </svg>
           </span>
-          <input
-            type="search"
-            placeholder="Search incidents, users, IPs..."
-            aria-label="Buscar"
-          />
+          <input type="search" placeholder="Search incidents, users, IPs..." aria-label="Buscar" />
         </div>
       </div>
 
@@ -51,13 +50,15 @@
 
         <button class="navbar-icon-btn" type="button" aria-label="Personas">
           <svg viewBox="0 0 24 24">
-            <path d="M8 11a3 3 0 1 1 3-3 3 3 0 0 1-3 3Zm8 0a3 3 0 1 1 3-3 3 3 0 0 1-3 3ZM8 13a4 4 0 0 0-4 4v2h8v-2a4 4 0 0 0-4-4Zm8 0a4 4 0 0 0-4 4v2h8v-2a4 4 0 0 0-4-4Z" />
+            <path
+              d="M8 11a3 3 0 1 1 3-3 3 3 0 0 1-3 3Zm8 0a3 3 0 1 1 3-3 3 3 0 0 1-3 3ZM8 13a4 4 0 0 0-4 4v2h8v-2a4 4 0 0 0-4-4Zm8 0a4 4 0 0 0-4 4v2h8v-2a4 4 0 0 0-4-4Z" />
           </svg>
         </button>
 
         <button class="navbar-icon-btn" type="button" aria-label="Huella">
           <svg viewBox="0 0 24 24">
-            <path d="M12 2a7 7 0 0 0-7 7v1h2V9a5 5 0 0 1 10 0 16 16 0 0 1-3 9.64L12 22l-2-1.36A18 18 0 0 0 7 9H5a20 20 0 0 0 4 13l3 2 3-2A18 18 0 0 0 19 9a7 7 0 0 0-7-7Z" />
+            <path
+              d="M12 2a7 7 0 0 0-7 7v1h2V9a5 5 0 0 1 10 0 16 16 0 0 1-3 9.64L12 22l-2-1.36A18 18 0 0 0 7 9H5a20 20 0 0 0 4 13l3 2 3-2A18 18 0 0 0 19 9a7 7 0 0 0-7-7Z" />
           </svg>
         </button>
       </nav>
@@ -65,21 +66,18 @@
       <div class="navbar-right">
         <button class="navbar-icon-btn" type="button" aria-label="Notificaciones">
           <svg viewBox="0 0 24 24">
-            <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm6-6V11a6 6 0 0 0-5-5.91V4a1 1 0 0 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1Z" />
+            <path
+              d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm6-6V11a6 6 0 0 0-5-5.91V4a1 1 0 0 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1Z" />
           </svg>
         </button>
 
         <div class="navbar-user">
-          <button
-            class="navbar-user-trigger"
-            id="userMenuToggle"
-            type="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
+          <button class="navbar-user-trigger" id="userMenuToggle" type="button" aria-haspopup="true"
+            aria-expanded="false">
             <span class="navbar-user-avatar">
               <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2a5 5 0 0 1 5 5v1a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5Zm0 11a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v3a3 3 0 0 0 3 3Zm0 2c3.31 0 6 2.02 6 4.5V21h-2v-1.5c0-1.41-1.79-2.5-4-2.5s-4 1.09-4 2.5V21H6v-1.5C6 17.02 8.69 15 12 15Z" />
+                <path
+                  d="M12 2a5 5 0 0 1 5 5v1a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5Zm0 11a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v3a3 3 0 0 0 3 3Zm0 2c3.31 0 6 2.02 6 4.5V21h-2v-1.5c0-1.41-1.79-2.5-4-2.5s-4 1.09-4 2.5V21H6v-1.5C6 17.02 8.69 15 12 15Z" />
               </svg>
             </span>
             <span class="navbar-user-chevron">▾</span>
@@ -87,15 +85,16 @@
 
           <div class="navbar-user-menu" id="userMenu">
             <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button class="navbar-user-item" type="submit">
+              @csrf
+              <button class="navbar-user-item" type="submit">
                 <span class="navbar-user-item-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                    <path d="M11 2h2v10h-2V2Zm-4.64 2.64 1.41 1.41A6 6 0 1 0 18 10a5.94 5.94 0 0 0-1.77-4.24l1.41-1.41A8 8 0 1 1 6.36 4.64Z" />
-                    </svg>
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M11 2h2v10h-2V2Zm-4.64 2.64 1.41 1.41A6 6 0 1 0 18 10a5.94 5.94 0 0 0-1.77-4.24l1.41-1.41A8 8 0 1 1 6.36 4.64Z" />
+                  </svg>
                 </span>
                 <span class="navbar-user-item-label">Salir</span>
-                </button>
+              </button>
             </form>
           </div>
         </div>
@@ -108,11 +107,7 @@
     <div class="layout-shell app-max-width">
       <!-- BARRA LATERAL IZQUIERDA (UDINIT) -->
       <aside class="sidebar izquierda" id="sidebarIzquierda">
-        <button
-          class="sidebar-toggle sidebar-toggle-izquierda"
-          type="button"
-          aria-label="Ocultar barra izquierda"
-        >
+        <button class="sidebar-toggle sidebar-toggle-izquierda" type="button" aria-label="Ocultar barra izquierda">
           &#x2039;
         </button>
         <div class="sidebar-content">
@@ -156,20 +151,21 @@
             <div class="casos-slider" id="casosSlider">
               <div class="casos-track">
                 @foreach($casos as $caso)
-                <article class="caso-card">
-                  <header class="caso-header">
-                    <div class="estado-badge {{ $caso->estado == 'activo' ? 'estado-activo' : ($caso->estado == 'en_progreso' ? 'estado-progreso' : 'estado-finalizado') }}">
-                      <div class="estado-icono"></div>
-                      <span>{{ ucfirst($caso->estado) }}</span>
+                  <article class="caso-card">
+                    <header class="caso-header">
+                      <div
+                        class="estado-badge {{ $caso->estado == 'activo' ? 'estado-activo' : ($caso->estado == 'en_progreso' ? 'estado-progreso' : 'estado-finalizado') }}">
+                        <div class="estado-icono"></div>
+                        <span>{{ ucfirst($caso->estado) }}</span>
+                      </div>
+                    </header>
+                    <div class="caso-body">
+                      <p>{{ $caso->descripcion }}</p>
                     </div>
-                  </header>
-                  <div class="caso-body">
-                    <p>{{ $caso->descripcion }}</p>
-                  </div>
-                  <footer class="caso-footer">
-                    <span>CASE ID:</span> {{ $caso->codigo_caso ?? 'N/A' }}
-                  </footer>
-                </article>
+                    <footer class="caso-footer">
+                      <span>CASE ID:</span> {{ $caso->codigo_caso ?? 'N/A' }}
+                    </footer>
+                  </article>
                 @endforeach
               </div>
             </div>
@@ -181,7 +177,8 @@
               <button class="panel-item" type="button" id="btnAdmin">
                 <span class="panel-icono">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 2a5 5 0 0 1 5 5v1a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5Zm0 11a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v3a3 3 0 0 0 3 3Zm0 2c3.31 0 6 2.02 6 4.5V21h-2v-1.5c0-1.41-1.79-2.5-4-2.5s-4 1.09-4 2.5V21H6v-1.5C6 17.02 8.69 15 12 15Z" />
+                    <path
+                      d="M12 2a5 5 0 0 1 5 5v1a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5Zm0 11a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v3a3 3 0 0 0 3 3Zm0 2c3.31 0 6 2.02 6 4.5V21h-2v-1.5c0-1.41-1.79-2.5-4-2.5s-4 1.09-4 2.5V21H6v-1.5C6 17.02 8.69 15 12 15Z" />
                   </svg>
                 </span>
                 <span>Admin</span>
@@ -199,7 +196,8 @@
               <button class="panel-item" type="button" id="btnNewUser">
                 <span class="panel-icono panel-icono-user-new">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M15 12a4 4 0 1 0-4-4 4.003 4.003 0 0 0 4 4Zm0-6a2 2 0 1 1-2 2 2.003 2.003 0 0 1 2-2ZM8 13a4 4 0 1 0-4-4 4.003 4.003 0 0 0 4 4Zm0-6a2 2 0 1 1-2 2 2.003 2.003 0 0 1 2-2Zm7 7a5.99 5.99 0 0 0-4.78 2.39A6.99 6.99 0 0 1 2.062 15 4.987 4.987 0 0 1 8 12h2.1a6.97 6.97 0 0 0 4.9 2Zm0 2a5 5 0 0 0-5 5h2a3 3 0 0 1 6 0h2a5 5 0 0 0-5-5Z" />
+                    <path
+                      d="M15 12a4 4 0 1 0-4-4 4.003 4.003 0 0 0 4 4Zm0-6a2 2 0 1 1-2 2 2.003 2.003 0 0 1 2-2ZM8 13a4 4 0 1 0-4-4 4.003 4.003 0 0 0 4 4Zm0-6a2 2 0 1 1-2 2 2.003 2.003 0 0 1 2-2Zm7 7a5.99 5.99 0 0 0-4.78 2.39A6.99 6.99 0 0 1 2.062 15 4.987 4.987 0 0 1 8 12h2.1a6.97 6.97 0 0 0 4.9 2Zm0 2a5 5 0 0 0-5 5h2a3 3 0 0 1 6 0h2a5 5 0 0 0-5-5Z" />
                   </svg>
                 </span>
                 <span>New user</span>
@@ -208,7 +206,8 @@
               <button class="panel-item" type="button" id="btnEvidence">
                 <span class="panel-icono panel-icono-evidence">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M10 2a6 6 0 0 1 4.8 9.6l4.8 4.8-1.4 1.4-4.8-4.8A6 6 0 1 1 10 2Zm0 2a4 4 0 1 0 4 4 4.005 4.005 0 0 0-4-4Z" />
+                    <path
+                      d="M10 2a6 6 0 0 1 4.8 9.6l4.8 4.8-1.4 1.4-4.8-4.8A6 6 0 1 1 10 2Zm0 2a4 4 0 1 0 4 4 4.005 4.005 0 0 0-4-4Z" />
                   </svg>
                 </span>
                 <span>Evidence</span>
@@ -217,16 +216,28 @@
               <button class="panel-item" type="button" id="btnReport">
                 <span class="panel-icono panel-icono-report">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 2v16h12V9h-5V4H6Zm7 0v3h3Z" />
+                    <path
+                      d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 2v16h12V9h-5V4H6Zm7 0v3h3Z" />
                   </svg>
                 </span>
                 <span>Report</span>
               </button>
 
+              <a href="{{ route('reports') }}" class="panel-item" style="text-decoration: none;">
+                <span class="panel-icono panel-icono-reports">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M3 3h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 2v14h18V5H3Zm3 3h12v2H6V8Zm0 4h12v2H6v-2Zm0 4h8v2H6v-2Z" />
+                  </svg>
+                </span>
+                <span>Reports</span>
+              </a>
+
               <button class="panel-item" type="button">
                 <span class="panel-icono panel-icono-tools">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M21.6 7.2 18 10.8l-2.8-.7-.7-2.8 3.6-3.6a4.5 4.5 0 0 0-5.7 5.7L5 17.4V21h3.6l7.4-7.4a4.5 4.5 0 0 0 5.6-6.4Z" />
+                    <path
+                      d="M21.6 7.2 18 10.8l-2.8-.7-.7-2.8 3.6-3.6a4.5 4.5 0 0 0-5.7 5.7L5 17.4V21h3.6l7.4-7.4a4.5 4.5 0 0 0 5.6-6.4Z" />
                   </svg>
                 </span>
                 <span>Tools</span>
@@ -241,7 +252,8 @@
                 <div class="usuario-main">
                   <div class="usuario-avatar">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 2a5 5 0 0 1 5 5v1a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5Zm0 11a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v3a3 3 0 0 0 3 3Zm0 2c3.31 0 6 2.02 6 4.5V21h-2v-1.5c0-1.41-1.79-2.5-4-2.5s-4 1.09-4 2.5V21H6v-1.5C6 17.02 8.69 15 12 15Z" />
+                      <path
+                        d="M12 2a5 5 0 0 1 5 5v1a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5Zm0 11a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v3a3 3 0 0 0 3 3Zm0 2c3.31 0 6 2.02 6 4.5V21h-2v-1.5c0-1.41-1.79-2.5-4-2.5s-4 1.09-4 2.5V21H6v-1.5C6 17.02 8.69 15 12 15Z" />
                     </svg>
                   </div>
                   <div class="usuario-textos">
@@ -253,7 +265,8 @@
                 <div class="usuario-email">
                   <div class="usuario-email-icono">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.51l8 5.33 8-5.33V6H4Zm16 2.49-7.44 4.96a2 2 0 0 1-2.12 0L3 8.49V18h17Z" />
+                      <path
+                        d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.51l8 5.33 8-5.33V6H4Zm16 2.49-7.44 4.96a2 2 0 0 1-2.12 0L3 8.49V18h17Z" />
                     </svg>
                   </div>
                   <span>{{ Auth::user()->mail }}</span>
@@ -273,11 +286,7 @@
 
       <!-- BARRA LATERAL DERECHA (TOOLS) -->
       <aside class="sidebar derecha" id="sidebarDerecha">
-        <button
-          class="sidebar-toggle sidebar-toggle-derecha"
-          type="button"
-          aria-label="Ocultar barra derecha"
-        >
+        <button class="sidebar-toggle sidebar-toggle-derecha" type="button" aria-label="Ocultar barra derecha">
           &#x203A;
         </button>
         <div class="sidebar-content">
@@ -286,7 +295,7 @@
           </div>
           <nav class="sidebar-menu" aria-label="Herramientas">
             @foreach($herramientas as $herramienta)
-            <button class="sidebar-item" type="button">{{ $herramienta->nombre }}</button>
+              <button class="sidebar-item" type="button">{{ $herramienta->nombre }}</button>
             @endforeach
           </nav>
         </div>
@@ -588,77 +597,92 @@
   <!-- MODAL GESTIÓN DE CASOS (TABLA) -->
   <!-- MODAL ADMIN (GESTIÓN) -->
   <div class="modal-overlay" id="modalGestionCasos" style="z-index: 1050;">
-    <div class="modal modal-xl" role="dialog" aria-modal="true" aria-labelledby="modalGestionCasosTitulo" style="width: 95%; max-width: 1200px; display: flex; flex-direction: column; max-height: 90vh;">
+    <div class="modal modal-xl" role="dialog" aria-modal="true" aria-labelledby="modalGestionCasosTitulo"
+      style="width: 95%; max-width: 1200px; display: flex; flex-direction: column; max-height: 90vh;">
       <div class="modal-header">
         <div class="modal-title" id="modalGestionCasosTitulo">Administración</div>
         <button class="modal-close" type="button" data-modal-close>&times;</button>
       </div>
-      
+
       <!-- Tabs de navegación -->
-      <div class="modal-tabs" style="padding: 0 1.5rem; border-bottom: 1px solid #334155; display: flex; gap: 1rem; flex-shrink: 0;">
-        <button class="tab-btn active" data-tab="casos" style="background: none; border: none; color: white; padding: 1rem; cursor: pointer; border-bottom: 2px solid #3b82f6;">Casos</button>
-        <button class="tab-btn" data-tab="usuarios" style="background: none; border: none; color: #94a3b8; padding: 1rem; cursor: pointer;">Usuarios</button>
+      <div class="modal-tabs"
+        style="padding: 0 1.5rem; border-bottom: 1px solid #334155; display: flex; gap: 1rem; flex-shrink: 0;">
+        <button class="tab-btn active" data-tab="casos"
+          style="background: none; border: none; color: white; padding: 1rem; cursor: pointer; border-bottom: 2px solid #3b82f6;">Casos</button>
+        <button class="tab-btn" data-tab="usuarios"
+          style="background: none; border: none; color: #94a3b8; padding: 1rem; cursor: pointer;">Usuarios</button>
       </div>
 
-      <div class="modal-body" style="padding: 1.5rem; overflow-y: auto; flex: 1; display: flex; flex-direction: column;">
-        
+      <div class="modal-body"
+        style="padding: 1.5rem; overflow-y: auto; flex: 1; display: flex; flex-direction: column;">
+
         <!-- VISTA CASOS -->
         <div id="adminCasosView" style="width: 100%;">
-            <!-- Filtros Responsivos (Flexbox) -->
-            <div class="filtros-container" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; align-items: center;">
-                <input type="text" id="busquedaCasos" placeholder="Buscar por ID, Título..." class="input-filtro" style="flex: 1 1 200px; background: #1e293b; border: 1px solid #334155; color: white; padding: 0.5rem; border-radius: 0.375rem;">
-                
-                <select id="filtroEstado" class="select-filtro" style="flex: 1 1 150px; background: #1e293b; border: 1px solid #334155; color: white; padding: 0.5rem; border-radius: 0.375rem;">
-                    <option value="">Todos los estados</option>
-                    <option value="activo">Activo</option>
-                    <option value="en progreso">En Progreso</option>
-                    <option value="pausado">Pausado</option>
-                    <option value="cerrado">Cerrado</option>
-                </select>
+          <!-- Filtros Responsivos (Flexbox) -->
+          <div class="filtros-container"
+            style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; align-items: center;">
+            <input type="text" id="busquedaCasos" placeholder="Buscar por ID, Título..." class="input-filtro"
+              style="flex: 1 1 200px; background: #1e293b; border: 1px solid #334155; color: white; padding: 0.5rem; border-radius: 0.375rem;">
 
-                <input type="date" id="filtroFecha" class="input-filtro" style="flex: 1 1 150px; background: #1e293b; border: 1px solid #334155; color: white; padding: 0.5rem; border-radius: 0.375rem;">
-            </div>
+            <select id="filtroEstado" class="select-filtro"
+              style="flex: 1 1 150px; background: #1e293b; border: 1px solid #334155; color: white; padding: 0.5rem; border-radius: 0.375rem;">
+              <option value="">Todos los estados</option>
+              <option value="activo">Activo</option>
+              <option value="en progreso">En Progreso</option>
+              <option value="pausado">Pausado</option>
+              <option value="cerrado">Cerrado</option>
+            </select>
 
-            <div class="tabla-container" style="overflow-x: auto; border: 1px solid #334155; border-radius: 0.375rem; width: 100%;">
-                <table class="tabla-gestion" style="width: 100%; border-collapse: collapse; color: white; min-width: 800px;">
-                    <thead>
-                    <tr style="border-bottom: 1px solid #334155; text-align: left; background-color: #0f172a;">
-                        <th style="padding: 1rem; white-space: nowrap;">CASE ID</th>
-                        <th style="padding: 1rem; white-space: nowrap;">STATUS</th>
-                        <th style="padding: 1rem;">TITLE</th>
-                        <th style="padding: 1rem; white-space: nowrap;">DATE</th>
-                        <th style="padding: 1rem; white-space: nowrap;">ACTIONS</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tablaGestionCasosBody">
-                    <!-- Rows injected by JS -->
-                    </tbody>
-                </table>
-            </div>
+            <input type="date" id="filtroFecha" class="input-filtro"
+              style="flex: 1 1 150px; background: #1e293b; border: 1px solid #334155; color: white; padding: 0.5rem; border-radius: 0.375rem;">
+          </div>
+
+          <div class="tabla-container"
+            style="overflow-x: auto; border: 1px solid #334155; border-radius: 0.375rem; width: 100%;">
+            <table class="tabla-gestion"
+              style="width: 100%; border-collapse: collapse; color: white; min-width: 800px;">
+              <thead>
+                <tr style="border-bottom: 1px solid #334155; text-align: left; background-color: #0f172a;">
+                  <th style="padding: 1rem; white-space: nowrap;">CASE ID</th>
+                  <th style="padding: 1rem; white-space: nowrap;">STATUS</th>
+                  <th style="padding: 1rem;">TITLE</th>
+                  <th style="padding: 1rem; white-space: nowrap;">DATE</th>
+                  <th style="padding: 1rem; white-space: nowrap;">ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody id="tablaGestionCasosBody">
+                <!-- Rows injected by JS -->
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- VISTA USUARIOS -->
         <div id="adminUsuariosView" style="display: none; width: 100%;">
-            <div class="filtros-container" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; align-items: center;">
-                <input type="text" id="busquedaUsuarios" placeholder="Buscar por Nombre, Email..." class="input-filtro" style="flex: 1 1 300px; background: #1e293b; border: 1px solid #334155; color: white; padding: 0.5rem; border-radius: 0.375rem;">
-            </div>
+          <div class="filtros-container"
+            style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; align-items: center;">
+            <input type="text" id="busquedaUsuarios" placeholder="Buscar por Nombre, Email..." class="input-filtro"
+              style="flex: 1 1 300px; background: #1e293b; border: 1px solid #334155; color: white; padding: 0.5rem; border-radius: 0.375rem;">
+          </div>
 
-            <div class="tabla-container" style="overflow-x: auto; border: 1px solid #334155; border-radius: 0.375rem; width: 100%;">
-                <table class="tabla-gestion" style="width: 100%; border-collapse: collapse; color: white; min-width: 800px;">
-                    <thead>
-                    <tr style="border-bottom: 1px solid #334155; text-align: left; background-color: #0f172a;">
-                        <th style="padding: 1rem; white-space: nowrap;">ID</th>
-                        <th style="padding: 1rem;">NOMBRE</th>
-                        <th style="padding: 1rem;">EMAIL</th>
-                        <th style="padding: 1rem; white-space: nowrap;">ROL</th>
-                        <th style="padding: 1rem; white-space: nowrap;">ACCIONES</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tablaGestionUsuariosBody">
-                    <!-- Rows injected by JS -->
-                    </tbody>
-                </table>
-            </div>
+          <div class="tabla-container"
+            style="overflow-x: auto; border: 1px solid #334155; border-radius: 0.375rem; width: 100%;">
+            <table class="tabla-gestion"
+              style="width: 100%; border-collapse: collapse; color: white; min-width: 800px;">
+              <thead>
+                <tr style="border-bottom: 1px solid #334155; text-align: left; background-color: #0f172a;">
+                  <th style="padding: 1rem; white-space: nowrap;">ID</th>
+                  <th style="padding: 1rem;">NOMBRE</th>
+                  <th style="padding: 1rem;">EMAIL</th>
+                  <th style="padding: 1rem; white-space: nowrap;">ROL</th>
+                  <th style="padding: 1rem; white-space: nowrap;">ACCIONES</th>
+                </tr>
+              </thead>
+              <tbody id="tablaGestionUsuariosBody">
+                <!-- Rows injected by JS -->
+              </tbody>
+            </table>
+          </div>
         </div>
 
       </div>
@@ -677,7 +701,7 @@
       </div>
       <div class="modal-body">
         <input type="hidden" id="editUserId">
-        
+
         <div class="campo modal-body-full">
           <label for="editNombreUsuario">Nombre completo</label>
           <input type="text" id="editNombreUsuario" placeholder="Ej: Juan Pérez" />
@@ -711,21 +735,38 @@
 
   <!-- Asegurar que el modal de Nuevo Caso tenga mayor Z-Index y estilos corregidos -->
   <style>
-      #modalNuevoCaso, #modalEditarCaso, #modalEditarUsuario { z-index: 1100 !important; }
-      
-      /* Ajustes para tabla oscura */
-      #tablaGestionCasosBody tr:hover, #tablaGestionUsuariosBody tr:hover { background-color: #1e293b; }
-      #tablaGestionCasosBody td, #tablaGestionUsuariosBody td { padding: 1rem; border-bottom: 1px solid #334155; color: #f1f5f9; vertical-align: middle; }
-      
-      /* Badge fix */
-      .badge-estado-modal { white-space: nowrap; display: inline-block; }
-      
-      /* Responsive adjustments for the grid */
-      @media (max-width: 768px) {
-          #modalGestionCasos .modal-body > div:first-child {
-              grid-template-columns: 1fr;
-          }
+    #modalNuevoCaso,
+    #modalEditarCaso,
+    #modalEditarUsuario {
+      z-index: 1100 !important;
+    }
+
+    /* Ajustes para tabla oscura */
+    #tablaGestionCasosBody tr:hover,
+    #tablaGestionUsuariosBody tr:hover {
+      background-color: #1e293b;
+    }
+
+    #tablaGestionCasosBody td,
+    #tablaGestionUsuariosBody td {
+      padding: 1rem;
+      border-bottom: 1px solid #334155;
+      color: #f1f5f9;
+      vertical-align: middle;
+    }
+
+    /* Badge fix */
+    .badge-estado-modal {
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    /* Responsive adjustments for the grid */
+    @media (max-width: 768px) {
+      #modalGestionCasos .modal-body>div:first-child {
+        grid-template-columns: 1fr;
       }
+    }
   </style>
 
   <!-- JS global y de componentes -->
@@ -735,30 +776,35 @@
   <script src="{{ asset('assets/dashboard/index.js') }}"></script>
   <!-- MODAL BITÁCORA (ACTIVITY LOG) -->
   <div class="modal-overlay" id="modalBitacora" aria-hidden="true">
-    <div class="modal-container" role="dialog" aria-modal="true" style="max-width: 900px; background-color: #fff; color: #333;">
+    <div class="modal-container" role="dialog" aria-modal="true"
+      style="max-width: 900px; background-color: #fff; color: #333;">
       <header class="modal-header" style="border-bottom: 1px solid #e5e7eb;">
         <h2 class="modal-title" style="color: #1e293b;">Bitácora de Actividad</h2>
         <button class="modal-close" type="button" aria-label="Cerrar" style="color: #64748b;">&times;</button>
       </header>
       <div class="modal-body" style="padding: 1.5rem; display: block;">
         <div class="table-container" style="max-height: 60vh; overflow-y: auto;">
-            <table class="data-table" style="width: 100%; border-collapse: collapse;">
-                <thead>
-                    <tr style="background-color: #f8fafc; color: #475569;">
-                        <th style="padding: 0.75rem; text-align: left; font-weight: 600; border: 1px solid #e2e8f0;">Fecha/Hora</th>
-                        <th style="padding: 0.75rem; text-align: left; font-weight: 600; border: 1px solid #e2e8f0;">Usuario</th>
-                        <th style="padding: 0.75rem; text-align: left; font-weight: 600; border: 1px solid #e2e8f0;">Acción</th>
-                        <th style="padding: 0.75rem; text-align: left; font-weight: 600; border: 1px solid #e2e8f0;">Descripción</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaBitacoraBody">
-                    <!-- Rows will be populated by JS -->
-                </tbody>
-            </table>
+          <table class="data-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background-color: #f8fafc; color: #475569;">
+                <th style="padding: 0.75rem; text-align: left; font-weight: 600; border: 1px solid #e2e8f0;">Fecha/Hora
+                </th>
+                <th style="padding: 0.75rem; text-align: left; font-weight: 600; border: 1px solid #e2e8f0;">Usuario
+                </th>
+                <th style="padding: 0.75rem; text-align: left; font-weight: 600; border: 1px solid #e2e8f0;">Acción</th>
+                <th style="padding: 0.75rem; text-align: left; font-weight: 600; border: 1px solid #e2e8f0;">Descripción
+                </th>
+              </tr>
+            </thead>
+            <tbody id="tablaBitacoraBody">
+              <!-- Rows will be populated by JS -->
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
 
 </body>
+
 </html>
