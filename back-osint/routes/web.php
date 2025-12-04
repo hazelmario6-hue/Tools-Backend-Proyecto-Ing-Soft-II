@@ -1,9 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+// Controladores Generales y de Auth
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HerramientaController;
+
+// Controladores de Reportes (Mantengo ambos por si usas las dos versiones)
+use App\Http\Controllers\ReportsController; // Versión con PDF/Obsidian
+use App\Http\Controllers\ReportesController; // Versión con Descargas
+
+// Controladores del Módulo Capturista
+use App\Http\Controllers\CapturistaWebController;
+use App\Http\Controllers\Api\CapturistaController;
+use App\Http\Controllers\ConsultorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,32 +35,46 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+// ----------------------------------------------------------------------
+// 2. Rutas Protegidas (Requieren Login)
+// ----------------------------------------------------------------------
+
 Route::middleware(['auth'])->group(function () {
+
+    // Dashboard General
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/herramientas', [HerramientaController::class, 'index']);
     Route::get('/categorias', [HerramientaController::class, 'categorias']);
     Route::post('/herramientas', [HerramientaController::class, 'store']);
     Route::delete('/herramientas/{id}', [HerramientaController::class, 'destroy']);
 
-    // Rutas de Reportes
-    Route::get('/reports', [App\Http\Controllers\ReportsController::class, 'index'])->name('reports');
-    Route::get('/reports/case/{id}', [App\Http\Controllers\ReportsController::class, 'show'])->name('reports.show');
-    Route::get('/reports/case/{id}/pdf', [App\Http\Controllers\ReportsController::class, 'exportPdf'])->name('reports.pdf');
-    Route::get('/reports/case/{id}/obsidian', [App\Http\Controllers\ReportsController::class, 'exportObsidian'])->name('reports.obsidian');
+    // -------------------------------------------------------
+    // Módulo de Reportes (Versión A - PDF/Obsidian)
+    // -------------------------------------------------------
+    Route::get('/reports', [ReportsController::class, 'index'])->name('reports');
+    Route::get('/reports/case/{id}', [ReportsController::class, 'show'])->name('reports.show');
+    Route::get('/reports/case/{id}/pdf', [ReportsController::class, 'exportPdf'])->name('reports.pdf');
+    Route::get('/reports/case/{id}/obsidian', [ReportsController::class, 'exportObsidian'])->name('reports.obsidian');
 
-    Route::get('/reportes', [App\Http\Controllers\ReportesController::class, 'index'])->name('reportes.index');
-    Route::get('/reportes/{nombreArchivo}/descargar', [App\Http\Controllers\ReportesController::class, 'descargar'])->name('reportes.descargar');
+    // -------------------------------------------------------
+    // Módulo de Reportes (Versión B - General)
+    // -------------------------------------------------------
+    Route::get('/reportes', [ReportesController::class, 'index'])->name('reportes.index');
+    Route::get('/reportes/{nombreArchivo}/descargar', [ReportesController::class, 'descargar'])->name('reportes.descargar');
 
-    // Rutas del Módulo Capturista (requiere rol capturista)
+    // -------------------------------------------------------
+    // Módulo Capturista (Middleware específico)
+    // -------------------------------------------------------
     Route::middleware(['capturista'])->prefix('capturista')->group(function () {
-        // Rutas de Vistas
-        Route::get('/casos', [App\Http\Controllers\CapturistaWebController::class, 'casos'])->name('capturista.casos');
-        Route::get('/casos/{id}', [App\Http\Controllers\CapturistaWebController::class, 'casoDetalle'])->name('capturista.caso-detalle');
-        Route::get('/casos/{idCaso}/evidencias', [App\Http\Controllers\CapturistaWebController::class, 'evidencias'])->name('capturista.evidencias');
-        Route::get('/casos/{idCaso}/reportes', [App\Http\Controllers\CapturistaWebController::class, 'reportes'])->name('capturista.reportes');
-        Route::get('/evidencias', [App\Http\Controllers\CapturistaWebController::class, 'todasEvidencias'])->name('capturista.todas-evidencias');
 
-        // Rutas de API (Internas, usan sesión web)
+        // --- Vistas Web ---
+        Route::get('/casos', [CapturistaWebController::class, 'casos'])->name('capturista.casos');
+        Route::get('/casos/{id}', [CapturistaWebController::class, 'casoDetalle'])->name('capturista.caso-detalle');
+        Route::get('/casos/{idCaso}/evidencias', [CapturistaWebController::class, 'evidencias'])->name('capturista.evidencias');
+        Route::get('/casos/{idCaso}/reportes', [CapturistaWebController::class, 'reportes'])->name('capturista.reportes');
+        Route::get('/evidencias', [CapturistaWebController::class, 'todasEvidencias'])->name('capturista.todas-evidencias');
+
+        // --- API Interna (Usa sesión web) ---
         Route::prefix('api')->group(function () {
             // Gestión de casos asignados
             Route::get('/casos', [App\Http\Controllers\Api\CapturistaController::class, 'getCasosAsignados']);
@@ -68,8 +93,27 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/casos/{idCaso}/reporte-personalizado', [App\Http\Controllers\Api\CapturistaController::class, 'generarReportePersonalizado']);
 
             // Gestión de reportes
-            Route::get('/casos/{idCaso}/reportes', [App\Http\Controllers\Api\CapturistaController::class, 'listarReportes']);
-            Route::get('/reportes/{nombreArchivo}/descargar', [App\Http\Controllers\Api\CapturistaController::class, 'descargarReporte']);
+            Route::get('/casos/{idCaso}/reportes', [CapturistaController::class, 'listarReportes']);
+            Route::get('/reportes/{nombreArchivo}/descargar', [CapturistaController::class, 'descargarReporte']);
         });
     });
+
+    // -------------------------------------------------------
+    // Módulo Consultor (Middleware específico)
+    // -------------------------------------------------------
+    Route::middleware(['consultor'])->prefix('consultor')->group(function () {
+
+        // Vista principal (dashboard del consultor)
+        Route::get('/inicio', [App\Http\Controllers\ConsultorController::class, 'inicio'])->name('consultor.inicio');
+
+        // Usuarios
+        Route::get('/usuarios/lista-usuarios', [App\Http\Controllers\ConsultorController::class, 'usuariosIndex'])->name('consultor.usuarios.index');
+        Route::get('/usuarios/{id}', [App\Http\Controllers\ConsultorController::class, 'usuariosShow'])->name('consultor.usuarios.show');
+
+        // Casos
+        Route::get('/casos/lista-casos', [App\Http\Controllers\ConsultorController::class, 'casosIndex'])->name('consultor.casos.index');
+        Route::get('/casos/{id}', [App\Http\Controllers\ConsultorController::class, 'casosShow'])->name('consultor.casos.show');
+
+    });
+
 });
