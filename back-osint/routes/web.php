@@ -25,44 +25,16 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Rutas de Reportes
     Route::get('/reports', [App\Http\Controllers\ReportsController::class, 'index'])->name('reports');
     Route::get('/reports/case/{id}', [App\Http\Controllers\ReportsController::class, 'show'])->name('reports.show');
     Route::get('/reports/case/{id}/pdf', [App\Http\Controllers\ReportsController::class, 'exportPdf'])->name('reports.pdf');
     Route::get('/reports/case/{id}/obsidian', [App\Http\Controllers\ReportsController::class, 'exportObsidian'])->name('reports.obsidian');
-});
-<?php
 
-use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\DashboardController;
-
-Route::get('/', function () {
-    return redirect()->route('login');
-});
-
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    
-    // Rutas de Reportes
     Route::get('/reportes', [App\Http\Controllers\ReportesController::class, 'index'])->name('reportes.index');
     Route::get('/reportes/{nombreArchivo}/descargar', [App\Http\Controllers\ReportesController::class, 'descargar'])->name('reportes.descargar');
-    
+
     // Rutas del Módulo Capturista (requiere rol capturista)
     Route::middleware(['capturista'])->prefix('capturista')->group(function () {
         // Rutas de Vistas
@@ -77,19 +49,19 @@ Route::middleware(['auth'])->group(function () {
             // Gestión de casos asignados
             Route::get('/casos', [App\Http\Controllers\Api\CapturistaController::class, 'getCasosAsignados']);
             Route::get('/casos/{id}', [App\Http\Controllers\Api\CapturistaController::class, 'verCaso']);
-            
+
             // Gestión de evidencias
             Route::get('/evidencias', [App\Http\Controllers\Api\CapturistaController::class, 'getAllEvidencias']);
             Route::get('/casos/{idCaso}/evidencias', [App\Http\Controllers\Api\CapturistaController::class, 'getEvidencias']);
             Route::post('/evidencias', [App\Http\Controllers\Api\CapturistaController::class, 'agregarEvidencia']);
             Route::put('/evidencias/{id}', [App\Http\Controllers\Api\CapturistaController::class, 'actualizarEvidencia']);
             Route::delete('/evidencias/{id}', [App\Http\Controllers\Api\CapturistaController::class, 'eliminarEvidencia']);
-            
+
             // Generación de reportes
             Route::get('/casos/{idCaso}/reporte-completo', [App\Http\Controllers\Api\CapturistaController::class, 'generarReporteCompleto']);
             Route::get('/casos/{idCaso}/reporte-evidencias', [App\Http\Controllers\Api\CapturistaController::class, 'generarReporteEvidencias']);
             Route::post('/casos/{idCaso}/reporte-personalizado', [App\Http\Controllers\Api\CapturistaController::class, 'generarReportePersonalizado']);
-            
+
             // Gestión de reportes
             Route::get('/casos/{idCaso}/reportes', [App\Http\Controllers\Api\CapturistaController::class, 'listarReportes']);
             Route::get('/reportes/{nombreArchivo}/descargar', [App\Http\Controllers\Api\CapturistaController::class, 'descargarReporte']);
