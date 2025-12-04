@@ -27,6 +27,10 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
+    // Rutas de Reportes
+    Route::get('/reportes', [App\Http\Controllers\ReportesController::class, 'index'])->name('reportes.index');
+    Route::get('/reportes/{nombreArchivo}/descargar', [App\Http\Controllers\ReportesController::class, 'descargar'])->name('reportes.descargar');
+    
     // Rutas del Módulo Capturista (requiere rol capturista)
     Route::middleware(['capturista'])->prefix('capturista')->group(function () {
         // Rutas de Vistas
