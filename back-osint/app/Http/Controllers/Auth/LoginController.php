@@ -39,7 +39,7 @@ class LoginController extends Controller
                 case 'admin':
                     return redirect()->route('dashboard');
                 case 'consultor':
-                    return redirect('/consultor.html');
+                    return redirect('consultor.inicio');
                 case 'capturista':
                     return redirect('/capturista/casos');
                 default:
@@ -60,3 +60,4 @@ class LoginController extends Controller
         return redirect('/login');
     }
 }
+
